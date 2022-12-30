@@ -5,18 +5,11 @@
   "scripts": {
     "build": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js && pnpm bundle",
     "bundle": "cd dist && zip -r index.zip index.js*",
-    "build:watch": "tsup src/index.ts --watch",
+    "build:watch": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js --watch",
     "format": "prettier --write ."
   },
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
-  "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
-    "clean": true,
-    "minify": true
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
