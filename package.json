@@ -1,9 +1,9 @@
 {
   "name": "ts-lambda-template",
   "version": "1.0.0",
-  "description": "Typescript lambda template with tsup for bundling.",
+  "description": "Typescript lambda template with esbuild for bundling dependencies.",
   "scripts": {
-    "build": "tsup && pnpm bundle",
+    "build": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js && pnpm bundle",
     "bundle": "cd dist && zip -r index.zip index.js*",
     "build:watch": "tsup src/index.ts --watch",
     "format": "prettier --write ."
@@ -22,9 +22,9 @@
   "license": "ISC",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.109",
+    "esbuild": "^0.16.12",
     "lefthook": "^1.2.6",
     "prettier": "^2.8.1",
-    "tsup": "^6.5.0",
     "typescript": "^4.9.4"
   }
 }
