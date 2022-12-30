@@ -1,0 +1,32 @@
+{
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    "compilerOptions": {
+        "lib": [
+            "esnext",
+            "DOM"
+        ],
+        "moduleResolution": "node",
+        "module": "esnext",
+        "target": "esnext",
+        "declaration": true,
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "strict": true,
+        "useUnknownInCatchVariables": false,
+        "baseUrl": "./",
+        "paths": {
+            "$lib": [
+                "src/lib"
+            ],
+            "$lib/*": [
+                "src/lib/*"
+            ],
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "scripts",
+        "test"
+    ]
+}

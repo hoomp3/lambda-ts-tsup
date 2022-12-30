@@ -1,0 +1,15 @@
+pre-commit:
+  parallel: true
+  commands:
+    fmt:
+      run: yarn format
+    build:
+      run: yarn build
+# pre-push:
+#   commands:
+#     nextest:
+#       run: cargo nextest run
+post-merge:
+  commands:
+    lefthook:
+      run: lefthook install
